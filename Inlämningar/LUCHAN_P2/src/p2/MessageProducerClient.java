@@ -29,9 +29,7 @@ public class MessageProducerClient {
         try {
             Socket socket = new Socket(ip, port);
             ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-            ArrayProducer obj = arrayprod;
-            oos.writeObject(obj);
-            Thread.sleep(1000);
+            oos.writeObject(arrayprod);
             oos.flush();
             oos.close();
             socket.close();
